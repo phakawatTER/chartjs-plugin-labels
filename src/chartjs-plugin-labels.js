@@ -474,17 +474,19 @@
       if (!SUPPORTED_TYPES[chart.config.type]) {
         return;
       }
-      chart._labels.forEach(function (label) {
-        label.barTotalPercentage = {};
-      });
+      if (chart._labels)
+        chart._labels.forEach(function (label) {
+          label.barTotalPercentage = {};
+        });
     },
     afterDatasetsDraw: function (chart) {
       if (!SUPPORTED_TYPES[chart.config.type]) {
         return;
       }
-      chart._labels.forEach(function (label) {
-        label.render();
-      });
+      if (chart._labels)
+        chart._labels.forEach(function (label) {
+          label.render();
+        });
     }
   });
 })();
